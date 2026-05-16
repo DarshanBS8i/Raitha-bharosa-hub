@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Raitha Bharosa Hub</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="input_data">Input Data</string>
+    <string name="action_plan">Action Plan</string>
+    <string name="history">History</string>
+    <string name="sugarcane">Sugarcane</string>
+    <string name="ragi">Ragi</string>
+    <string name="paddy">Paddy</string>
+    <string name="other_crop">Other</string>
+    <string name="moisture">Moisture</string>
+    <string name="weather">Weather</string>
+    <string name="sowing_index">SOWING INDEX</string>
+    <string name="moisture_label">MOISTURE</string>
+    <string name="yield_suggestions">Yield &amp; Quality Suggestions</string>
+    <string name="current_conditions">Current Conditions</string>
+    <string name="current_field">Current Field</string>
+    <string name="soil_moisture">Soil Moisture</string>
+    <string name="soil_nutrients_npk">Soil Nutrients (NPK)</string>
+    <string name="nitrogen">Nitrogen (N)</string>
+    <string name="phosphorus">Phosphorus (P)</string>
+    <string name="potassium">Potassium (K)</string>
+    <string name="field_notes">Additional Observations</string>
+    <string name="field_notes_hint">Waterlogging, Pest sightings, etc.</string>
+    <string name="select_crop">Select Crop</string>
+    <string name="enter_custom_crop">Enter Custom Crop</string>
+    <string name="location_plot_size">Location &amp; Plot Size</string>
+    <string name="location">Location</string>
+    <string name="plot_size">Plot Size</string>
+    <string name="unit">Unit</string>
+    <string name="start_dashboard">Start My Dashboard</string>
+    <string name="generate_simulated_data">Generate Simulated Data</string>
+    <string name="crop_details">Crop Details</string>
+    <string name="welcome">Welcome to Raitha Bharosa Hub</string>
+    <string name="setup_profile">Please set up your profile to continue</string>
+    <string name="your_name">Your Name</string>
+    <string name="primary_crop">Primary Crop</string>
+    <string name="get_started">Get Started</string>
+    <string name="save_data">Save Data</string>
+
+    <!-- Advisory / Recommendation strings -->
+    <string name="advisory_go">Go</string>
+    <string name="advisory_wait">Wait</string>
+    <string name="advisory_warning">Warning</string>
+    <string name="advisory_good">Good</string>
+    <string name="advisory_normal">Normal</string>
+    <string name="advisory_optimal_moisture">Optimal moisture level. Safe to sow!</string>
+    <string name="advisory_soil_too_wet">Soil too wet to sow. High risk of fungal diseases.</string>
+    <string name="advisory_soil_too_dry">Soil too dry. Needs irrigation before sowing.</string>
+    <string name="advisory_heavy_rain">Heavy rain expected. Postpone fertilizer/pesticide application.</string>
+    <string name="advisory_favorable">Favorable conditions for applying fertilizers.</string>
+    <string name="advisory_normal_conditions">Normal conditions. Maintain routine checks.</string>
+
+    <!-- Yield suggestions -->
+    <string name="yield_npk_optimal">NPK levels are optimal for current stage.</string>
+    <string name="yield_npk_low">NPK levels are low. Consider adding balanced fertilizer.</string>
+    <string name="yield_high_moisture">High moisture detected. Ensure proper drainage.</string>
+    <string name="yield_low_moisture">Low moisture detected. Irrigation may be required.</string>
+    <string name="yield_weeding">Ensure regular weeding for better yield.</string>
+
+    <!-- Weather conditions -->
+    <string name="weather_sunny">Sunny</string>
+    <string name="weather_cloudy">Cloudy</string>
+    <string name="weather_rainy">Rainy</string>
+    <string name="weather_today">Today</string>
+    <string name="weather_tomorrow">Tomorrow</string>
+
+    <!-- History screen -->
+    <string name="krishi_calendar">Krishi Calendar</string>
+    <string name="no_history">No History Data Available</string>
+
+    <!-- Language selection screen -->
+    <string name="choose_language">Choose Your Language</string>
+    <string name="choose_language_subtitle">ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="continue_btn">Continue</string>
+    <string name="reset_profile">Reset Profile</string>
+    <string name="advisory_cloudy_humid">Cloudy &amp; Humid. Monitor for fungal growth.</string>
+    <string name="advisory_rain_warning">Rain expected. Good for natural irrigation.</string>
+    <string name="advisory_hot_weather">High temperature detected. Ensure proper irrigation to prevent crop heat stress.</string>
+    <string name="advisory_pest_check">Mild weather conditions. Ideal time to inspect crops for pests and diseases.</string>
+    <string name="advisory_fertilizer_window">Good conditions for applying fertilizers. Do it in the morning or evening.</string>
+</resources>

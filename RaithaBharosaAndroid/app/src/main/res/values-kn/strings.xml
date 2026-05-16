@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ರೈತ ಭರೋಸಾ ಹಬ್‌</string>
+    <string name="dashboard">ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</string>
+    <string name="input_data">ಮಾಹಿತಿ ನಮೂದಿ</string>
+    <string name="action_plan">ಕ್ರಿಯಾ ಯೋಜನೆ</string>
+    <string name="history">ಇತಿಹಾಸ</string>
+    <string name="sugarcane">ಕಬ್ಬು</string>
+    <string name="ragi">ರಾಗಿ</string>
+    <string name="paddy">ಭತ್ತ</string>
+    <string name="other_crop">ಇತರೆ</string>
+    <string name="moisture">ತೇವಾಂಶ</string>
+    <string name="weather">ಹವಾಮಾನ</string>
+    <string name="sowing_index">ಬಿತ್ತನೆ ಸೂಚ್ಯಂಕ</string>
+    <string name="moisture_label">ತೇವಾಂಶ</string>
+    <string name="yield_suggestions">ಇಳುವರಿ ಮತ್ತು ಗುಣಮಟ್ಟದ ಸಲಹೆಗಳು</string>
+    <string name="current_conditions">ಪ್ರಸ್ತುತ ಪರಿಸ್ಥಿತಿಗಳು</string>
+    <string name="soil_moisture">ಮಣ್ಣಿನ ತೇವಾಂಶ</string>
+    <string name="soil_nutrients_npk">ಮಣ್ಣಿನ ಪೋಷಕಾಂಶಗಳು (NPK)</string>
+    <string name="nitrogen">ಸಾರಜನಕ (N)</string>
+    <string name="phosphorus">ರಂಜಕ (P)</string>
+    <string name="potassium">ಪೊಟ್ಯಾಸಿಯಮ್ (K)</string>
+    <string name="field_notes">ಹೆಚ್ಚುವರಿ ಅವಲೋಕನಗಳು</string>
+    <string name="field_notes_hint">ನೀರು ನಿಲ್ಲುವುದು, ಕೀಟಗಳ ಕಾಟ ಇತ್ಯಾದಿ.</string>
+    <string name="select_crop">ಬೆಳೆ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="enter_custom_crop">ಬೆಳೆ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="location_plot_size">ಸ್ಥಳ ಮತ್ತು ಪ್ಲಾಟ್ ಗಾತ್ರ</string>
+    <string name="location">ಸ್ಥಳ</string>
+    <string name="plot_size">ಪ್ಲಾಟ್ ಗಾತ್ರ</string>
+    <string name="unit">ಘಟಕ</string>
+    <string name="start_dashboard">ನನ್ನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="generate_simulated_data">ಸಿಮ್ಯುಲೇಟೆಡ್ ಡೇಟಾವನ್ನು ತಯಾರಿಸಿ</string>
+    <string name="crop_details">ಬೆಳೆ ವಿವರಗಳು</string>
+    <string name="welcome">ರೈತ ಭರೋಸಾ ಹಬ್‌ಗೆ ಸ್ವಾಗತ</string>
+    <string name="setup_profile">ಮುಂದುವರಿಯಲು ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ</string>
+    <string name="your_name">ನಿಮ್ಮ ಹೆಸರು</string>
+    <string name="primary_crop">ಮುಖ್ಯ ಬೆಳೆ</string>
+    <string name="get_started">ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="save_data">ಮಾಹಿತಿ ಉಳಿಸಿ</string>
+
+    <!-- Advisory / Recommendation strings -->
+    <string name="advisory_go">ಮುಂದುವರಿಯಿರಿ</string>
+    <string name="advisory_wait">ಕಾಯಿರಿ</string>
+    <string name="advisory_warning">ಎಚ್ಚರಿಕೆ</string>
+    <string name="advisory_good">ಉತ್ತಮ</string>
+    <string name="advisory_normal">ಸಾಮಾನ್ಯ</string>
+    <string name="advisory_optimal_moisture">ಅನುಕೂಲ ತೇವಾಂಶ ಮಟ್ಟ. ಬಿತ್ತನೆಗೆ ಸುರಕ್ಷಿತ!</string>
+    <string name="advisory_soil_too_wet">ಮಣ್ಣು ತುಂಬಾ ತೇವಾಂಶದಿಂದ ಕೂಡಿದೆ. ಶಿಲೀಂಧ್ರ ರೋಗಗಳ ಅಪಾಯ ಹೆಚ್ಚು.</string>
+    <string name="advisory_soil_too_dry">ಮಣ್ಣು ಅತಿಯಾದ ಒಣಗಿದೆ. ಬಿತ್ತನೆಗೆ ಮುನ್ನ ನೀರಾವರಿ ಅಗತ್ಯ.</string>
+    <string name="advisory_heavy_rain">ಭಾರಿ ಮಳೆ ನಿರೀಕ್ಷಿಸಲಾಗಿದೆ. ಗೊಬ್ಬರ/ಕೀಟನಾಶಕ ಸಿಂಪಡಣೆ ಮುಂದೂಡಿ.</string>
+    <string name="advisory_favorable">ಗೊಬ್ಬರ ಹಾಕಲು ಅನುಕೂಲಕರ ಪರಿಸ್ಥಿತಿಗಳಿವೆ.</string>
+    <string name="advisory_normal_conditions">ಸಾಮಾನ್ಯ ಪರಿಸ್ಥಿತಿಗಳು. ನಿಯಮಿತ ಪರಿಶೀಲನೆ ಮುಂದುವರಿಸಿ.</string>
+
+    <!-- Yield suggestions -->
+    <string name="yield_npk_optimal">NPK ಮಟ್ಟಗಳು ಪ್ರಸ್ತುತ ಹಂತಕ್ಕೆ ಸೂಕ್ತವಾಗಿವೆ.</string>
+    <string name="yield_npk_low">NPK ಮಟ್ಟಗಳು ಕಡಿಮೆಯಿವೆ. ಸಮತೋಲಿತ ಗೊಬ್ಬರವನ್ನು ಸೇರಿಸುವುದನ್ನು ಪರಿಗಣಿಸಿ.</string>
+    <string name="yield_high_moisture">ಹೆಚ್ಚಿನ ತೇವಾಂಶ ಪತ್ತೆಯಾಗಿದೆ. ಸರಿಯಾದ ಒಳಚರಂಡಿಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="yield_low_moisture">ಕಡಿಮೆ ತೇವಾಂಶ ಪತ್ತೆಯಾಗಿದೆ. ನೀರಾವರಿ ಅಗತ್ಯವಿರಬಹುದು.</string>
+    <string name="yield_weeding">ಉತ್ತಮ ಇಳುವರಿಗಾಗಿ ನಿಯಮಿತ ಕಳೆ ತೆಗೆಯುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</string>
+
+    <!-- Weather conditions -->
+    <string name="weather_sunny">ಬಿಸಿಲು</string>
+    <string name="weather_cloudy">ಮೋಡ</string>
+    <string name="weather_rainy">ಮಳೆ</string>
+    <string name="weather_today">ಇಂದು</string>
+    <string name="weather_tomorrow">ನಾಳೆ</string>
+
+    <!-- History screen -->
+    <string name="krishi_calendar">ಕೃಷಿ ಕ್ಯಾಲೆಂಡರ್</string>
+    <string name="no_history">ಯಾವುದೇ ಇತಿಹಾಸ ಲಭ್ಯವಿಲ್ಲ</string>
+
+    <!-- Language selection screen -->
+    <string name="choose_language">ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="choose_language_subtitle">Choose Your Language</string>
+    <string name="continue_btn">ಮುಂದುವರಿಯಿರಿ</string>
+    <string name="reset_profile">ಪ್ರೊಫೈಲ್ ಮರುಹೊಂದಿಸಿ</string>
+    <string name="advisory_cloudy_humid">ಮೋಡ ಮತ್ತು ಆರ್ದ್ರತೆ. ಶಿಲೀಂಧ್ರಗಳ ಬಗ್ಗೆ ಗಮನವಿರಲಿ.</string>
+    <string name="advisory_rain_warning">ಮಳೆಯ ನಿರೀಕ್ಷೆಯಿದೆ. ನೈಸರ್ಗಿಕ ನೀರಾವರಿಗೆ ಉತ್ತಮ.</string>
+    <string name="advisory_hot_weather">ಹೆಚ್ಚಿನ ತಾಪಮಾನ ಕಂಡುಬಂದಿದೆ. ಬೆಳೆಗಳಿಗೆ ಶಾಖದ ಒತ್ತಡವನ್ನು ತಡೆಗಟ್ಟಲು ಸರಿಯಾದ ನೀರಾವರಿಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="advisory_pest_check">ಸೌಮ್ಯ ಹವಾಮಾನ ಇದೆ. ಕೀಟ ಮತ್ತು ರೋಗಗಳಿಗಾಗಿ ಬೆಳೆಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸೂಕ್ತ ಸಮಯ.</string>
+    <string name="advisory_fertilizer_window">ಗೊಬ್ಬರ ಹಾಕಲು ಉತ್ತಮ ಪರಿಸ್ಥಿತಿ. ಬೆಳಿಗ್ಗೆ ಅಥವಾ ಸಂಜೆ ಹೊತ್ತು ಮಾಡಿ.</string>
+</resources>
