@@ -2,6 +2,17 @@
 
 Raitha Bharosa Hub is a smart agricultural decision-support mobile application designed for smallholder farmers. It translates simulated agricultural data into actionable insights, helping farmers with sowing, fertilization, and environmental monitoring.
 
+## 📥 Download App
+
+You can download and install the latest version of the app directly on your Android device:
+
+**[Download APK v1.0](https://github.com/DarshanBS8i/Raitha-bharosa-hub/releases/download/v1.0/app-debug.apk)**
+
+### Scan to Install
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/DarshanBS8i/Raitha-bharosa-hub/releases/download/v1.0/app-debug.apk)
+
+*Note: Since this is a beta release, you may need to enable "Install from Unknown Sources" on your device.*
+
 ## Features
 
 - **Bilingual Support**: Full support for English and Kannada.
