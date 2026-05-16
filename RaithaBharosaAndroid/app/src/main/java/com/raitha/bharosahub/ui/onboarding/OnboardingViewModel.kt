@@ -25,13 +25,13 @@ class OnboardingViewModel(private val repository: FarmRepository) : ViewModel() 
     fun updatePlotSize(size: String) { _uiState.update { it.copy(plotSize = size) } }
     fun updateCrop(crop: String) { _uiState.update { it.copy(primaryCrop = crop) } }
 
-    fun saveProfile(onComplete: () -> Unit) {
+    fun saveProfile(lang: String, onComplete: () -> Unit) {
         viewModelScope.launch {
             repository.saveProfile(
                 UserProfile(
                     name = _uiState.value.name,
                     primaryCrop = _uiState.value.primaryCrop,
-                    lang = "en",
+                    lang = lang,
                     location = _uiState.value.location,
                     plotSize = _uiState.value.plotSize
                 )

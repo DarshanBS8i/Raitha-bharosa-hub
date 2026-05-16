@@ -69,6 +69,13 @@ fun ActionPlanCard(item: AdvisoryItem) {
                     val dayText = when(item.day) {
                         "Today" -> stringResource(R.string.weather_today)
                         "Tomorrow" -> stringResource(R.string.weather_tomorrow)
+                        "Monday" -> stringResource(R.string.monday)
+                        "Tuesday" -> stringResource(R.string.tuesday)
+                        "Wednesday" -> stringResource(R.string.wednesday)
+                        "Thursday" -> stringResource(R.string.thursday)
+                        "Friday" -> stringResource(R.string.friday)
+                        "Saturday" -> stringResource(R.string.saturday)
+                        "Sunday" -> stringResource(R.string.sunday)
                         else -> item.day
                     }
                     Text(dayText, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color(0xFF2D4F2B))

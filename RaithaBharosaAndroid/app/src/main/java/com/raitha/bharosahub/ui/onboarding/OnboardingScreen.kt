@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.raitha.bharosahub.R
 
 @Composable
-fun OnboardingScreen(viewModel: OnboardingViewModel, onComplete: () -> Unit) {
+fun OnboardingScreen(viewModel: OnboardingViewModel, currentLang: String, onComplete: () -> Unit) {
     val uiState by viewModel.uiState.collectAsState()
 
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -114,7 +114,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel, onComplete: () -> Unit) {
             Spacer(modifier = Modifier.height(48.dp))
 
             Button(
-                onClick = { viewModel.saveProfile(onComplete) },
+                onClick = { viewModel.saveProfile(currentLang, onComplete) },
                 modifier = Modifier.fillMaxWidth().height(56.dp),
                 shape = RoundedCornerShape(12.dp),
                 enabled = uiState.name.isNotBlank() && uiState.location.isNotBlank() && uiState.plotSize.isNotBlank(),

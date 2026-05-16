@@ -87,14 +87,14 @@ fun InputScreen(viewModel: InputViewModel) {
                 }
                 Column(modifier = Modifier.weight(1f)) {
                     Text(stringResource(R.string.unit), fontSize = 12.sp, color = Color.Gray)
-                    OutlinedTextField(value = "acres", onValueChange = {}, readOnly = true)
+                    OutlinedTextField(value = stringResource(R.string.acres), onValueChange = {}, readOnly = true)
                 }
             }
         }
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("ಮಣ್ಣಿನ ತೇವಾಂಶ: ${moisture.toInt()}%", fontWeight = FontWeight.Bold)
+        Text("${stringResource(R.string.soil_moisture)}: ${moisture.toInt()}%", fontWeight = FontWeight.Bold)
         Slider(
             value = moisture,
             onValueChange = { moisture = it },
@@ -104,11 +104,11 @@ fun InputScreen(viewModel: InputViewModel) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("ಮಣ್ಣಿನ ಪೋಷಕಾಂಶಗಳು (NPK)", fontWeight = FontWeight.Bold)
+        Text(stringResource(R.string.soil_nutrients_npk), fontWeight = FontWeight.Bold)
         
-        NPKSlider("ಸಾರಜನಕ (N): ${nitrogen.toInt()}", nitrogen, { nitrogen = it })
-        NPKSlider("ರಂಜಕ (P): ${phosphorus.toInt()}", phosphorus, { phosphorus = it })
-        NPKSlider("ಪೊಟ್ಯಾಸಿಯಮ್ (K): ${potassium.toInt()}", potassium, { potassium = it })
+        NPKSlider("${stringResource(R.string.nitrogen)}: ${nitrogen.toInt()}", nitrogen, { nitrogen = it })
+        NPKSlider("${stringResource(R.string.phosphorus)}: ${phosphorus.toInt()}", phosphorus, { phosphorus = it })
+        NPKSlider("${stringResource(R.string.potassium)}: ${potassium.toInt()}", potassium, { potassium = it })
 
         Spacer(modifier = Modifier.height(32.dp))
 

@@ -87,6 +87,7 @@ fun RaithaBharosaMain() {
                 val onboardingViewModel: com.raitha.bharosahub.ui.onboarding.OnboardingViewModel = viewModel(factory = factory)
                 com.raitha.bharosahub.ui.onboarding.OnboardingScreen(
                     viewModel = onboardingViewModel,
+                    currentLang = currentLang,
                     onComplete = { onboardingCompleted = true }
                 )
             }
@@ -94,6 +95,12 @@ fun RaithaBharosaMain() {
             MainAppShell(factory, currentLang, onLangChange = { lang ->
                 LocaleHelper.setLocale(context, lang)
                 currentLang = lang
+                coroutineScope.launch {
+                    val p = profileState
+                    if (p != null) {
+                        app.repository.saveProfile(p.copy(lang = lang))
+                    }
+                }
             }, onReset = {
                 coroutineScope.launch {
                     app.repository.clearProfile()

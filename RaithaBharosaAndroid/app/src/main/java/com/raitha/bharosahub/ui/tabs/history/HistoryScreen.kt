@@ -90,10 +90,10 @@ fun HistoryCard(item: SoilDataEntity) {
             Text("📍 ${item.location}", fontSize = 13.sp, color = Color(0xFF5D4037))
             Spacer(modifier = Modifier.height(8.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                MetricChip("💧 ${item.moisture}%", "Moisture")
-                MetricChip("N:${item.nitrogen}", "Nitrogen")
-                MetricChip("P:${item.phosphorus}", "Phosphorus")
-                MetricChip("K:${item.potassium}", "Potassium")
+                MetricChip("💧 ${item.moisture}%", stringResource(R.string.moisture))
+                MetricChip("N:${item.nitrogen}", stringResource(R.string.nitrogen))
+                MetricChip("P:${item.phosphorus}", stringResource(R.string.phosphorus))
+                MetricChip("K:${item.potassium}", stringResource(R.string.potassium))
             }
         }
     }
