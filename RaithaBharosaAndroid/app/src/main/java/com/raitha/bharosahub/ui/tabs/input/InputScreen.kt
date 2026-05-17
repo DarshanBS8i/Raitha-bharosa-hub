@@ -163,7 +163,7 @@ fun NPKSlider(label: String, value: Float, onValueChange: (Float) -> Unit) {
 fun InputCard(title: String, icon: androidx.compose.ui.graphics.vector.ImageVector? = null, content: @Composable () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFF5EAC3)),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFEDEAD8)),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

@@ -60,7 +60,7 @@ fun ActionPlanScreen(viewModel: ActionPlanViewModel) {
 fun ActionPlanCard(item: AdvisoryItem) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFF5EAC3)),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFEDEAD8)),
         shape = RoundedCornerShape(20.dp)
     ) {
         Column {
