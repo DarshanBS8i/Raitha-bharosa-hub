@@ -202,7 +202,7 @@ fun MainAppShell(factory: AppViewModelFactory, currentLang: String, onLangChange
                 }
                 1 -> {
                     val vm: com.raitha.bharosahub.ui.tabs.input.InputViewModel = viewModel(factory = factory)
-                    com.raitha.bharosahub.ui.tabs.input.InputScreen(vm)
+                    com.raitha.bharosahub.ui.tabs.input.InputScreen(vm, currentLang, onSaveSuccess = { selectedTab = 0 })
                 }
                 2 -> {
                     val vm: com.raitha.bharosahub.ui.tabs.plan.ActionPlanViewModel = viewModel(factory = factory)

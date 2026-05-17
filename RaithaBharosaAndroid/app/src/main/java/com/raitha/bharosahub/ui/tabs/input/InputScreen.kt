@@ -20,8 +20,9 @@ import androidx.compose.ui.unit.sp
 import com.raitha.bharosahub.R
 
 @Composable
-fun InputScreen(viewModel: InputViewModel) {
+fun InputScreen(viewModel: InputViewModel, currentLang: String, onSaveSuccess: () -> Unit = {}) {
     val profile by viewModel.profile.collectAsState()
+    val latestSoilData by viewModel.latestSoilData.collectAsState()
     
     // Local state for editable fields initialized from profile
     var editableCrop by remember(profile) { mutableStateOf(profile?.primaryCrop ?: "sugarcane") }
@@ -32,6 +33,15 @@ fun InputScreen(viewModel: InputViewModel) {
     var nitrogen by remember { mutableStateOf(32f) }
     var phosphorus by remember { mutableStateOf(20f) }
     var potassium by remember { mutableStateOf(30f) }
+
+    LaunchedEffect(latestSoilData, currentLang) {
+        latestSoilData?.let {
+            moisture = it.moisture.toFloat()
+            nitrogen = it.nitrogen.toFloat()
+            phosphorus = it.phosphorus.toFloat()
+            potassium = it.potassium.toFloat()
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -121,7 +131,8 @@ fun InputScreen(viewModel: InputViewModel) {
                     k = potassium.toInt(),
                     crop = editableCrop,
                     location = editableLocation,
-                    plotSize = editablePlotSize
+                    plotSize = editablePlotSize,
+                    onSuccess = onSaveSuccess
                 )
             },
             modifier = Modifier.fillMaxWidth().height(56.dp),

@@ -18,6 +18,12 @@ class InputViewModel(private val repository: FarmRepository) : ViewModel() {
         initialValue = null
     )
 
+    val latestSoilData = repository.latestSoilData.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = null
+    )
+
     fun simulateData() {
         viewModelScope.launch {
             val profile = repository.userProfile.first()
@@ -29,7 +35,16 @@ class InputViewModel(private val repository: FarmRepository) : ViewModel() {
         }
     }
 
-    fun saveManualData(moisture: Int, n: Int, p: Int, k: Int, crop: String, location: String, plotSize: String) {
+    fun saveManualData(
+        moisture: Int,
+        n: Int,
+        p: Int,
+        k: Int,
+        crop: String,
+        location: String,
+        plotSize: String,
+        onSuccess: () -> Unit = {}
+    ) {
         viewModelScope.launch {
             // Update profile first
             repository.saveProfile(
@@ -55,6 +70,7 @@ class InputViewModel(private val repository: FarmRepository) : ViewModel() {
                 plotSize = plotSize
             )
             repository.insertSoilData(data)
+            onSuccess()
         }
     }
 }

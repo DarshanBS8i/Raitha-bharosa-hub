@@ -157,7 +157,7 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
                 Icon(Icons.Default.Info, null, tint = Color(0xFF2D2D2D), modifier = Modifier.size(24.dp))
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
-                    stringResource(id = getResId(uiState.yieldSuggestion)),
+                    text = uiState.yieldSuggestion,
                     fontSize = 14.sp,
                     color = Color(0xFF2D2D2D),
                     lineHeight = 20.sp
