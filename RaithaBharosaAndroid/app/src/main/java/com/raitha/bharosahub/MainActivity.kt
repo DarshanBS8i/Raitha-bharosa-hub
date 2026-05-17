@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -183,7 +184,7 @@ fun MainAppShell(factory: AppViewModelFactory, currentLang: String, onLangChange
                 NavigationBarItem(
                     selected = selectedTab == 3,
                     onClick = { selectedTab = 3 },
-                    icon = { Icon(Icons.Default.List, null) },
+                    icon = { Icon(Icons.AutoMirrored.Filled.List, null) },
                     label = { Text(stringResource(R.string.history), fontSize = 10.sp, fontWeight = FontWeight.Medium) },
                     colors = NavigationBarItemDefaults.colors(
                         selectedIconColor = Color(0xFF2D4F2B),
