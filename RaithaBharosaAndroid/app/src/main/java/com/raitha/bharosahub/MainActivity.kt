@@ -126,7 +126,12 @@ fun MainAppShell(factory: AppViewModelFactory, currentLang: String, onLangChange
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF2D4F2B)),
                 actions = {
                     TextButton(onClick = { onLangChange(if (currentLang == "en") "kn" else "en") }) {
-                        Text(if (currentLang == "en") "KN" else "EN", color = Color.White, fontWeight = FontWeight.Bold)
+                        Text(
+                            text = if (currentLang == "en") "ಕನ್ನಡ" else "English", 
+                            color = Color.White, 
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
                     }
                     IconButton(onClick = { showMenu = true }) {
                         Icon(Icons.Default.MoreVert, contentDescription = null, tint = Color.White)
