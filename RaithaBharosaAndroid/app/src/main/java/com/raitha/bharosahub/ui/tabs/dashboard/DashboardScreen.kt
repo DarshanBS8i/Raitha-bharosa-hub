@@ -36,8 +36,9 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 20.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFF5EAC3)),
-            shape = RoundedCornerShape(24.dp)
+            colors = CardDefaults.cardColors(containerColor = Color(0xFFEDEAD8)),
+            shape = RoundedCornerShape(24.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
         ) {
             Column(
                 modifier = Modifier
@@ -47,10 +48,10 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    stringResource(R.string.sowing_index),
-                    color = Color(0xFF2D4F2B),
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Medium
+                    text = stringResource(R.string.sowing_index).uppercase(),
+                    color = Color(0xFF7A8B7B),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Box(
@@ -58,20 +59,25 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
                     contentAlignment = Alignment.Center
                 ) {
                     CircularProgressIndicator(
-                        progress = uiState.recommendation.index / 100f,
+                        progress = { uiState.recommendation.index / 100f },
                         modifier = Modifier.size(180.dp),
-                        strokeWidth = 12.dp,
-                        color = Color(0xFF1B9D4E),
-                        trackColor = Color(0xFFE0E0E0)
+                        strokeWidth = 14.dp,
+                        color = Color(0xFFFF9800), // Orange arc exactly like screenshot
+                        trackColor = Color(0xFFE6E2C8) // Darker cream track
                     )
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(
                             text = "${uiState.recommendation.index}",
                             color = Color(0xFF2D4F2B),
                             fontSize = 64.sp,
-                            fontWeight = FontWeight.Light
+                            fontWeight = FontWeight.Normal
                         )
-                        Text(text = "%", color = Color(0xFF2D4F2B), fontSize = 18.sp)
+                        Text(
+                            text = "%", 
+                            color = Color(0xFF2D4F2B), 
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Medium
+                        )
                     }
                 }
                 Spacer(modifier = Modifier.height(16.dp))
@@ -79,40 +85,54 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
                     onClick = {},
                     label = { 
                         val cropId = uiState.profile?.primaryCrop ?: "paddy"
-                        Text(stringResource(getCropResId(cropId)), color = Color(0xFF2D4F2B)) 
+                        Text(
+                            text = stringResource(getCropResId(cropId)), 
+                            color = Color(0xFF2D4F2B),
+                            fontWeight = FontWeight.Medium
+                        ) 
                     },
-                    colors = SuggestionChipDefaults.suggestionChipColors(containerColor = Color(0xFFD4E2D4))
+                    colors = SuggestionChipDefaults.suggestionChipColors(containerColor = Color(0xFFD4E2D4)),
+                    border = null,
+                    shape = RoundedCornerShape(12.dp)
                 )
             }
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        // Status Card: Wait / Go Alert Panel
+        val isGo = uiState.recommendation.canSow
+        val alertBgColor = if (isGo) Color(0xFFE2EDE2) else Color(0xFFFCEEEF)
+        val alertContentColor = if (isGo) Color(0xFF2D4F2B) else Color(0xFF6A1B1B)
+        val alertIcon = if (isGo) Icons.Default.CheckCircle else Icons.Default.Warning
 
-        // Large Status Card
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = if (uiState.recommendation.canSow) Color(0xFF708A58) else Color(0xFFD32F2F)),
-            shape = RoundedCornerShape(16.dp)
+            colors = CardDefaults.cardColors(containerColor = alertBgColor),
+            shape = RoundedCornerShape(20.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
         ) {
-            Row(modifier = Modifier.padding(20.dp), verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier.padding(20.dp), 
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Icon(
-                    if (uiState.recommendation.canSow) Icons.Default.CheckCircle else Icons.Default.Cancel,
-                    null,
-                    tint = Color.White,
-                    modifier = Modifier.size(48.dp)
+                    imageVector = alertIcon,
+                    contentDescription = null,
+                    tint = alertContentColor,
+                    modifier = Modifier.size(44.dp)
                 )
                 Spacer(modifier = Modifier.width(16.dp))
                 Column {
                     Text(
-                        stringResource(if (uiState.recommendation.canSow) R.string.advisory_go else R.string.advisory_wait),
-                        color = Color.White,
+                        text = stringResource(if (isGo) R.string.advisory_go else R.string.advisory_wait),
+                        color = alertContentColor,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        stringResource(getResId(uiState.recommendation.messageKey)),
-                        color = Color.White.copy(alpha = 0.9f),
-                        fontSize = 14.sp
+                        text = stringResource(getResId(uiState.recommendation.messageKey)),
+                        color = alertContentColor.copy(alpha = 0.85f),
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Medium
                     )
                 }
             }
@@ -121,12 +141,17 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
         Spacer(modifier = Modifier.height(20.dp))
 
         // Weather and Moisture Small Cards
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(), 
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            val isHot = uiState.currentTemp > 25
             SmallMetricCard(
                 title = stringResource(R.string.weather),
                 value = "${uiState.currentTemp}°C",
-                subtitle = stringResource(R.string.weather_cloudy),
-                icon = Icons.Default.Cloud,
+                subtitle = stringResource(if (isHot) R.string.weather_sunny else R.string.weather_cloudy),
+                icon = if (isHot) Icons.Default.WbSunny else Icons.Default.Cloud,
+                iconColor = if (isHot) Color(0xFFE5A93C) else Color(0xFF78909C),
                 modifier = Modifier.weight(1f)
             )
             SmallMetricCard(
@@ -134,6 +159,7 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
                 value = "${uiState.latestMoisture}%",
                 subtitle = stringResource(R.string.current_field),
                 icon = Icons.Default.WaterDrop,
+                iconColor = Color(0xFF4A5D4E),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -142,25 +168,32 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
 
         // Yield Suggestions Section
         Text(
-            stringResource(R.string.yield_suggestions),
-            fontSize = 18.sp,
+            text = stringResource(R.string.yield_suggestions).uppercase(),
+            fontSize = 13.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF2D4F2B)
+            color = Color(0xFF7A8B7B)
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFE8EAF6)),
-            shape = RoundedCornerShape(12.dp)
+            colors = CardDefaults.cardColors(containerColor = Color(0xFFEDEAD8)),
+            shape = RoundedCornerShape(20.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
         ) {
-            Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.Top) {
-                Icon(Icons.Default.Info, null, tint = Color(0xFF2D2D2D), modifier = Modifier.size(24.dp))
+            Row(modifier = Modifier.padding(20.dp), verticalAlignment = Alignment.Top) {
+                Icon(
+                    imageVector = Icons.Default.Info, 
+                    contentDescription = null, 
+                    tint = Color(0xFF67855C), 
+                    modifier = Modifier.size(24.dp)
+                )
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
                     text = uiState.yieldSuggestion,
                     fontSize = 14.sp,
-                    color = Color(0xFF2D2D2D),
-                    lineHeight = 20.sp
+                    color = Color(0xFF2E3D30),
+                    lineHeight = 20.sp,
+                    fontWeight = FontWeight.Medium
                 )
             }
         }
@@ -168,19 +201,47 @@ fun DashboardScreen(viewModel: DashboardViewModel) {
 }
 
 @Composable
-fun SmallMetricCard(title: String, value: String, subtitle: String, icon: androidx.compose.ui.graphics.vector.ImageVector, modifier: Modifier) {
+fun SmallMetricCard(
+    title: String, 
+    value: String, 
+    subtitle: String, 
+    icon: androidx.compose.ui.graphics.vector.ImageVector, 
+    iconColor: Color,
+    modifier: Modifier
+) {
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFF5EAC3)),
-        shape = RoundedCornerShape(16.dp)
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFEDEAD8)),
+        shape = RoundedCornerShape(24.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(title, fontSize = 12.sp, color = Color.Gray)
-            Spacer(modifier = Modifier.height(8.dp))
-            Icon(icon, null, tint = Color(0xFF2D4F2B), modifier = Modifier.size(32.dp))
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(value, fontSize = 24.sp, fontWeight = FontWeight.Normal, color = Color(0xFF2D4F2B))
-            Text(subtitle, fontSize = 12.sp, color = Color.Gray)
+            Text(
+                text = title.uppercase(), 
+                fontSize = 11.sp, 
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF7A8B7B)
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            Icon(
+                imageVector = icon, 
+                contentDescription = null, 
+                tint = iconColor, 
+                modifier = Modifier.size(32.dp)
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            Text(
+                text = value, 
+                fontSize = 24.sp, 
+                fontWeight = FontWeight.Bold, 
+                color = Color(0xFF2E3D30)
+            )
+            Text(
+                text = subtitle, 
+                fontSize = 12.sp, 
+                fontWeight = FontWeight.Medium,
+                color = Color(0xFF7A8B7B)
+            )
         }
     }
 }
@@ -207,3 +268,4 @@ fun getCropResId(crop: String): Int {
         else -> R.string.other_crop
     }
 }
+
